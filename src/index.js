@@ -1,4 +1,6 @@
-import { Component, h, render, unmountComponentAtNode } from "preact";
+import { Component, h, render } from "preact";
+
+const Noop = () => null;
 
 export default function ShadowDOM(ComponentClass, CSSString) {
 	class ShadowDOMComponentClass extends Component {
@@ -9,8 +11,12 @@ export default function ShadowDOM(ComponentClass, CSSString) {
 			}
 
 			this.shadow = node.createShadowRoot();
-			this._component = render(<ComponentClass {...this.props}/>, this.shadow);
-			this.shadow.innerHTML += `<style>${CSSString}</style>`;
+			this.shadow.innerHTML = `<style>${CSSString}</style>`;
+			this._component = render(<ComponentClass {...this.props}/>, this.shadow, this._component);
+		}
+		
+		componentWillUnmount() {
+			render(<Noop />, this.shadow, this._component);
 		}
 
 		render() {
