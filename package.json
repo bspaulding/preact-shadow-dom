@@ -1,0 +1,33 @@
+{
+  "name": "preact-shadow-dom",
+  "version": "1.0.0",
+  "description": "HOC that renders component into shadow-dom",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bspaulding/preact-shadow-dom.git"
+  },
+  "keywords": [
+    "preact",
+    "shadow",
+    "dom"
+  ],
+  "author": "Bradley J. Spaulding",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bspaulding/preact-shadow-dom/issues"
+  },
+  "homepage": "https://github.com/bspaulding/preact-shadow-dom#readme",
+  "devDependencies": {
+    "babel": "6.5.2",
+    "babel-core": "6.10.4",
+    "babel-loader": "6.2.4",
+    "babel-plugin-transform-react-jsx": "6.8.0",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-react": "6.11.1",
+    "webpack": "1.13.1"
+  }
+}
